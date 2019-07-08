@@ -2,8 +2,11 @@
    $(document).ready(function(){
    $('#start').on('click',function(){
         game.start();
-})
+    })
 
+    $(document).on('click','#end',function(){
+        game.done();
+    })
     var questions =[{
         question:"On which continent is Bangladesh located?",
         answers:["Africa","Asia","Europe"],
@@ -69,6 +72,7 @@
                 }
             }
         
+            $('#subContainer').append('<br><button id = "end">DONE</button>')
     },
     done : function(){
         $.each($("input[name ='question-0']:checked"),function(){
