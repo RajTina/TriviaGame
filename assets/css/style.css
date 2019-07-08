@@ -1,0 +1,30 @@
+body{
+    
+    background-color: aqua;
+    text-align: center;
+    
+   
+ 
+    
+}
+
+#about-image{
+    width: 275px;
+    height:183px;
+    float: left;
+}
+#about-image1{
+    float: right;
+}
+
+#start{
+    background-clip: border-box;
+    border: 10px dotted #000000;
+    font-size: 30px;
+
+
+}
+#container{
+    background: url(assets/images/mobilevalprop1.png);
+   
+}
