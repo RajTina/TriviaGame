@@ -13,44 +13,44 @@
         correctAnswer: "Asia"
     }, {
 
-        question:"What is the national flower of Bangladesh?",
-        answers:["Africa","Asia","Water lily"],
-        correctAnswer: "Asia"
+        question:"On which continent is USA located?",
+        answers:["South America","Africa","North America"],
+        correctAnswer: "North America"
     },{
 
-        question:"On which continent is Bangladesh located?",
-        answers:["Africa","Asia","Europe"],
-        correctAnswer: "Asia"
+        question:"What year did USA finally become independent?",
+        answers:["1778","1779","1776"],
+        correctAnswer: "1776"
     }, {
 
-        question:"On which continent is Bangladesh located?",
-        answers:["Africa","Asia","Europe"],
-        correctAnswer: "Asia"
+        question:"What year did Bangladesh finally become independent?",
+        answers:["1971","1947","1942"],
+        correctAnswer: "1971"
     }, {
 
-        question:"On which continent is Bangladesh located?",
-        answers:["Africa","Asia","Europe"],
-        correctAnswer: "Asia"
+        question:"Why did Bangladesh fight for independence?",
+        answers:["For land","For fame","For language"],
+        correctAnswer: "For language"
     },{
 
-        question:"On which continent is Bangladesh located?",
-        answers:["Africa","Asia","Europe"],
-        correctAnswer: "Asia"
+        question:"Why did USA fight for independence?",
+        answers:["For unreasonable prices","For Fame","For unreasonable taxes"],
+        correctAnswer: "For unreasonable taxes"
     }, {
 
-        question:"On which continent is Bangladesh located?",
-        answers:["Africa","Asia","Europe"],
-        correctAnswer: "Asia"
+        question:"What is the capital of Bangladesh ?",
+        answers:["Delhi","Dhaka","London"],
+        correctAnswer: "Dhaka"
     },{
 
-        question:"On which continent is Bangladesh located?",
-        answers:["Africa","Asia","Europe"],
-        correctAnswer: "Asia"
+        question:"What is the capital of USA?",
+        answers:["New York","Washington DC","Atlanta"],
+        correctAnswer: "Washington DC"
     }];
     var game = {
         correct: 0,
         wrong: 0,
-        counter:120,
+        counter:100,
         countdown : function(){
             game.counter--;
             $("#counter").html(game.counter);
@@ -62,17 +62,17 @@
         },
     start: function (){
         timer=setInterval(game.countdown,1000);
-        $("#subContainer").prepend('<h2> Time Remaining:<span id = "counter"> 120 </span>Seconds</h2>');
+        $("#subContainer").prepend('<h2> Time Remaining:<span id = "counter"> 100 </span>Seconds</h2>');
             $("#start").remove();
             for (var i = 0;i<questions.length;i++){
                 $('#subContainer').append("<h2>" + questions[i].question+"<h2>")
                 for (var j = 0;j<questions[i].answers.length;j++ ){
                     $("#subContainer").append ("<input type = 'radio' name='question-" + i +"' value ='" + questions[i].answers[j] +"'>"+questions[i].answers[j])
-        
+                  
                 }
             }
         
-            $('#subContainer').append('<br><button id = "end">DONE</button>')
+            $('#subContainer').append('<br><br><button id = "end">DONE</button>')
     },
     done : function(){
         $.each($("input[name ='question-0']:checked"),function(){
@@ -168,7 +168,7 @@
              $("#subContainer").append("<h3>Unanswered:" + (questions.length-(this.wrong+this.correct))+'</h3>');
 
           }
-          
+
     }
 
    })

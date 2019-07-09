@@ -2,11 +2,24 @@ body{
     
     background-color: aqua;
     text-align: center;
-    
-   
+    background-image: url(../images/Ai-Coloured-polygonal-background-design-vector-free-download.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  
  
     
 }
+#end{
+    background-clip: border-box;
+    border: 10px dotted yellow;
+    font-size: 30px;
+    background-color: red;
+
+}
+
+    
+
 
 #about-image{
     width: 275px;
@@ -19,12 +32,25 @@ body{
 
 #start{
     background-clip: border-box;
-    border: 10px dotted #000000;
+    border: 10px dotted yellow;
     font-size: 30px;
+    background-color:green;
+   
 
 
 }
-#container{
-    background: url(assets/images/mobilevalprop1.png);
+#image2{
+    width: 100px;
+    text-align: center;
    
+  
+
+
+}
+#head{
+    font-family: TheBlacklist;
+    font-size: 40px;
+}
+.h1{
+    font-family: TheBlacklist;
 }
