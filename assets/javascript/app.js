@@ -34,8 +34,8 @@
     },{
 
         question:"Why did USA fight for independence?",
-        answers:["For unreasonable prices","For Fame","For unreasonable taxes"],
-        correctAnswer: "For unreasonable taxes"
+        answers:["For unreasonable prices","For Fame","Taxation without representation"],
+        correctAnswer: "Taxation without representation"
     }, {
 
         question:"What is the capital of Bangladesh ?",
@@ -50,7 +50,7 @@
     var game = {
         correct: 0,
         wrong: 0,
-        counter:100,
+        counter:80,
         countdown : function(){
             game.counter--;
             $("#counter").html(game.counter);
@@ -62,7 +62,7 @@
         },
     start: function (){
         timer=setInterval(game.countdown,1000);
-        $("#subContainer").prepend('<h2> Time Remaining:<span id = "counter"> 100 </span>Seconds</h2>');
+        $("#subContainer").prepend('<h2> Time Remaining:<span id = "counter"> 80 </span>Seconds</h2>');
             $("#start").remove();
             for (var i = 0;i<questions.length;i++){
                 $('#subContainer').append("<h2>" + questions[i].question+"<h2>")
@@ -162,11 +162,20 @@
          result:function(){
              clearInterval(timer);
              $("#subContainer h2").remove();
-             $("#subContainer").html("<h2>All done!</h2>");
-             $("#subContainer").append("<h3>Correct Answers:"+this.correct+"</h3>");
-             $("#subContainer").append("<h3>Wrong Answers:"+this.wrong+"</h3>");
-             $("#subContainer").append("<h3>Unanswered:" + (questions.length-(this.wrong+this.correct))+'</h3>');
+             $("#subContainer").html("<h2 class='endGame'>All done!</h2>");
+             $("#subContainer").append("<h3 class='endGame'>Correct Answers:"+this.correct+"</h3>");
+             $("#subContainer").append("<h3 class='endGame'>Wrong Answers:"+this.wrong+"</h3>");
+             $("#subContainer").append("<h3 class='endGame'>Unanswered:" + (questions.length-(this.wrong+this.correct))+'</h3>');
+             $('#subContainer').append("<button type='button' id='resetBtn'> RESET </button>");
 
+            $('#resetBtn').on("click", function() {
+                $("#subContainer .endGame").remove();
+                $("#resetBtn").remove();
+                game.correct = 0;
+                game.incorrect=0;
+                counter = 100;
+                game.start();
+            })
           }
 
     }

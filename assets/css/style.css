@@ -17,6 +17,13 @@ body{
     background-color: red;
 
 }
+#resetBtn{
+    background-clip: border-box;
+    border: 10px dotted yellow;
+    font-size: 30px;
+    background-color:blue;
+
+}
 
     
 
