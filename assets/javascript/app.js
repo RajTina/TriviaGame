@@ -172,8 +172,10 @@
                 $("#subContainer .endGame").remove();
                 $("#resetBtn").remove();
                 game.correct = 0;
-                game.incorrect=0;
-                counter = 100;
+                game.wrong=0;
+
+                game.counter = 80;
+            
                 game.start();
             })
           }
